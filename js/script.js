@@ -23,10 +23,20 @@
         // utilizzo le proprietà dell'oggetto per inserire le classi dinamicamente
         // utilizzo la key "color" per associare la classe che da il colore all'icona
 
-
+const contIcons = document.querySelector(".container-icons");
 
 
 // funzioni utili
- function name(params) {
-     
- }
+//  function icon(params) {
+    dataIcon.forEach((Elem) => {
+        console.log(Elem);
+        contIcons.innerHTML +=`
+        <div class="icon">
+            <i class="fas fa-dog${Elem.family} ${Elem.prefix}${Elem.name} ${Elem.color}"></i>
+            <span>dog</span>
+        </div>
+        `
+    }
+
+    )
+//  }
