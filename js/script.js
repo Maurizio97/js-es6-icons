@@ -23,19 +23,52 @@
         // DONE=> utilizzo le proprietà dell'oggetto per inserire le classi dinamicamente
         // DONE=> utilizzo la key "color" per associare la classe che da il colore all'icona
 
+
 const contIcons = document.querySelector(".container-icons");
+/* const selection = document.querySelector("select"); */
+const btn = document.querySelector("button");
+/* icon(contIcons, dataIcon); */
+btn.addEventListener(/* "Inputs" */ "click",
+        
+        () => {
+        contIcons.innerHTML = " ";
+        dataIcon.forEach((elem) => {
+            const filter = document.querySelector("select").value;
+            if (filter == elem.type) {
+                console.log(`filtro ${filter}`, elem);
+                icon(contIcons, elem);
+            } else if (filter == "all") {
+                console.log(`filtro ${filter}`, elem);
+                icon(contIcons, elem);
+
+            }
+        }
+        );
+    }
+                
+        );
 
 // funzioni utili
-//  function icon(params) {
-    dataIcon.forEach((Elem) => {
-        console.log(Elem);
-        contIcons.innerHTML +=`
+// function icon(container, myArray) {
+//     myArray.forEach((elem) => {
+//         /* console.log(Elem); */
+
+//         container.innerHTML +=`
+//         <div class="icon">
+//             <i class="fas fa-dog${elem.family} ${elem.prefix}${elem.name} ${elem.color}"></i>
+//             <span>dog</span>
+//         </div>
+//         `;
+//     }
+
+//     );
+// };
+
+function icon(container, elem) {
+        container.innerHTML +=`
         <div class="icon">
-            <i class="fas fa-dog${Elem.family} ${Elem.prefix}${Elem.name} ${Elem.color}"></i>
+            <i class="fas fa-dog${elem.family} ${elem.prefix}${elem.name} ${elem.color}"></i>
             <span>dog</span>
         </div>
-        `
-    }
-
-    )
-//  }
+        `;
+    };
