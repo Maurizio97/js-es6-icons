@@ -26,7 +26,7 @@
 // seleziono il contenitore delle icone
 const contIcons = document.querySelector(".container-icons");
 // seleziono i filtri
-const selection = document.querySelector("select").value;
+const selection = document.querySelector("select");
 const btn = document.querySelector("button");
 // genero tutte le icone
 iconAll(contIcons, dataIcon);
