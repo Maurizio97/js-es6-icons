@@ -27,20 +27,20 @@
 const contIcons = document.querySelector(".container-icons");
 /* const selection = document.querySelector("select"); */
 const btn = document.querySelector("button");
-/* icon(contIcons, dataIcon); */
+iconAll(contIcons, dataIcon);
 btn.addEventListener(/* "Inputs" */ "click",
         
-        () => {
+    () => {
         contIcons.innerHTML = " ";
         dataIcon.forEach((elem) => {
             const filter = document.querySelector("select").value;
             if (filter == elem.type) {
                 console.log(`filtro ${filter}`, elem);
-                icon(contIcons, elem);
+                iconFromFilter(contIcons, elem);
+
             } else if (filter == "all") {
                 console.log(`filtro ${filter}`, elem);
-                icon(contIcons, elem);
-
+                iconFromFilter(contIcons, elem);
             }
         }
         );
@@ -49,26 +49,26 @@ btn.addEventListener(/* "Inputs" */ "click",
         );
 
 // funzioni utili
-// function icon(container, myArray) {
-//     myArray.forEach((elem) => {
-//         /* console.log(Elem); */
+function iconAll(container, myArray) {
+    myArray.forEach((elem) => {
+        /* console.log(Elem); */
 
-//         container.innerHTML +=`
-//         <div class="icon">
-//             <i class="fas fa-dog${elem.family} ${elem.prefix}${elem.name} ${elem.color}"></i>
-//             <span>dog</span>
-//         </div>
-//         `;
-//     }
-
-//     );
-// };
-
-function icon(container, elem) {
         container.innerHTML +=`
         <div class="icon">
             <i class="fas fa-dog${elem.family} ${elem.prefix}${elem.name} ${elem.color}"></i>
             <span>dog</span>
         </div>
         `;
-    };
+    }
+
+    );
+};
+
+function iconFromFilter(container, elem) {
+    container.innerHTML +=`
+    <div class="icon">
+        <i class="fas fa-dog${elem.family} ${elem.prefix}${elem.name} ${elem.color}"></i>
+        <span>dog</span>
+    </div>
+    `;
+};
