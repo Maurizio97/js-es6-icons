@@ -17,14 +17,13 @@
 // 	},
 
 
-// seleziono il container per stampare gli elementi
-// creo una funzione per stampare gli elementi in pagina
-    // scorro gli oggetti dell'array
-        // utilizzo le proprietà dell'oggetto per inserire le classi dinamicamente
-        // utilizzo la key "color" per associare la classe che da il colore all'icona
+// DONE=> seleziono il container per stampare gli elementi
+// DONE=> creo una funzione per stampare gli elementi in pagina
+    // DONE=> scorro gli oggetti dell'array
+        // DONE=> utilizzo le proprietà dell'oggetto per inserire le classi dinamicamente
+        // DONE=> utilizzo la key "color" per associare la classe che da il colore all'icona
 
 const contIcons = document.querySelector(".container-icons");
-
 
 // funzioni utili
 //  function icon(params) {
