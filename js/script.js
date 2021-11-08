@@ -23,14 +23,17 @@
         // DONE=> utilizzo le proprietà dell'oggetto per inserire le classi dinamicamente
         // DONE=> utilizzo la key "color" per associare la classe che da il colore all'icona
 
-
+// seleziono il contenitore delle icone
 const contIcons = document.querySelector(".container-icons");
-/* const selection = document.querySelector("select"); */
+// seleziono i filtri
+const selection = document.querySelector("select").value;
 const btn = document.querySelector("button");
+// genero tutte le icone
 iconAll(contIcons, dataIcon);
-btn.addEventListener(/* "Inputs" */ "click",
+// creo un ascoltatore e permetto di scegliere le icone tramite un filtro
+selection.addEventListener("Inputs"/*  "click" */,
         
-    () => {
+    function () {
         contIcons.innerHTML = " ";
         dataIcon.forEach((elem) => {
             const filter = document.querySelector("select").value;
@@ -49,6 +52,7 @@ btn.addEventListener(/* "Inputs" */ "click",
         );
 
 // funzioni utili
+// funzione per creare tutte le icone 
 function iconAll(container, myArray) {
     myArray.forEach((elem) => {
         /* console.log(Elem); */
@@ -56,7 +60,7 @@ function iconAll(container, myArray) {
         container.innerHTML +=`
         <div class="icon">
             <i class="fas fa-dog${elem.family} ${elem.prefix}${elem.name} ${elem.color}"></i>
-            <span>dog</span>
+            <span>${elem.name}</span>
         </div>
         `;
     }
@@ -64,6 +68,7 @@ function iconAll(container, myArray) {
     );
 };
 
+// funzione per creare icone scelte tramite filtro
 function iconFromFilter(container, elem) {
     container.innerHTML +=`
     <div class="icon">
