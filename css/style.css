@@ -4,25 +4,48 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+h1 {
+    background-color: cadetblue;
+    height: 70px;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
 .container-icons {
     display: flex;
     justify-content: space-around;
+    justify-content: start;
+    flex-wrap: wrap;
 }
 
 .icon {
-    width: 150px;
-    height: 75px;
-    background-color: grey;
+    width: 200px;
+    height: 100px;
+    margin: 35px;
+    box-shadow: black 2px 2px;
+    background-color: rgba(128, 128, 128, 0.425);
     border-radius: 25px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-span {
-    text-align: center;
+.icon i {
+    font-size: 50px;
 }
+
+span {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
 
 .orange {
     color: orange;
